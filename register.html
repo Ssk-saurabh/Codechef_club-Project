@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration - College Club</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">College Club</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="registration-section">
+      <nav aria-label="Breadcrumb">
+        <a href="events.html">&larr; Back to events</a>
+      </nav>
+
+      <h1>Register for Event</h1>
+      <p id="eventSummary">Registering for: <strong>Annual Hackathon 2026</strong></p>
+
+      <!-- Registration Form -->
+      <form id="registrationForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="name" required placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="name@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="college">College Name</label>
+          <input type="text" id="college" name="college" required placeholder="Enter your college / institute">
+        </div>
+
+        <div class="form-group">
+          <label for="year">Academic Year</label>
+          <select id="year" name="year" required>
+            <option value="">Select year</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+            <option value="Postgraduate">Postgraduate</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number">
+        </div>
+
+        <button type="submit" id="submitBtn">Complete Registration</button>
+      </form>
+
+      <!-- Status / Success / Error Message container -->
+      <div id="statusMessage" class="status-message" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 College Club. All rights reserved.</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/registration.js"></script>
+</body>
+</html>

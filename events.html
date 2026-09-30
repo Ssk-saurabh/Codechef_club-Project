@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - College Club</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">College Club</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="events-header">
+      <h1>All Club Events</h1>
+      <p>Browse through workshops, contests, seminars, and networking sessions.</p>
+    </section>
+
+    <!-- Filter & Search Controls -->
+    <section class="events-controls">
+      <form id="searchFilterForm" onsubmit="return false;">
+        <label for="searchInput">Search Event:</label>
+        <input type="text" id="searchInput" placeholder="Search by name...">
+
+        <label for="categoryFilter">Category:</label>
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Hackathon">Hackathon</option>
+          <option value="Contest">Contest</option>
+          <option value="Seminar">Seminar</option>
+        </select>
+      </form>
+    </section>
+
+    <!-- Events List / Grid -->
+    <section class="events-list">
+      <div id="eventsContainer" class="events-grid">
+        <article class="event-card">
+          <h3>Annual Hackathon 2026</h3>
+          <p><strong>Category:</strong> Hackathon</p>
+          <p><strong>Date:</strong> October 25, 2026</p>
+          <p><strong>Time:</strong> 10:00 AM</p>
+          <p><strong>Venue:</strong> Main Auditorium</p>
+          <p>Join us for 24 hours of coding, innovation, and fun with top industry mentors and prizes.</p>
+          <a href="event.html?id=1">View Details</a>
+          <a href="register.html?id=1">Register</a>
+        </article>
+
+        <article class="event-card">
+          <h3>Web Development Bootcamp</h3>
+          <p><strong>Category:</strong> Workshop</p>
+          <p><strong>Date:</strong> November 5, 2026</p>
+          <p><strong>Time:</strong> 02:00 PM</p>
+          <p><strong>Venue:</strong> Lab 3</p>
+          <p>Learn modern web development basics with HTML, CSS, and JavaScript.</p>
+          <a href="event.html?id=2">View Details</a>
+          <a href="register.html?id=2">Register</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 College Club. All rights reserved.</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

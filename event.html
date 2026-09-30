@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details - College Club</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">College Club</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="event-details">
+      <nav aria-label="Breadcrumb">
+        <a href="events.html">&larr; Back to all events</a>
+      </nav>
+
+      <header class="event-header">
+        <h1 id="eventTitle">Annual Hackathon 2026</h1>
+        <p class="category-badge"><strong>Category:</strong> <span id="eventCategory">Hackathon</span></p>
+      </header>
+
+      <section class="event-meta">
+        <p><strong>Date:</strong> <span id="eventDate">October 25, 2026</span></p>
+        <p><strong>Time:</strong> <span id="eventTime">10:00 AM</span></p>
+        <p><strong>Venue:</strong> <span id="eventVenue">Main Auditorium</span></p>
+      </section>
+
+      <section class="event-description">
+        <h2>About This Event</h2>
+        <div id="eventDescription">
+          <p>Join us for 24 hours of coding, innovation, and fun with top industry mentors and prizes. Participants will collaborate in teams to build innovative solutions for real-world problems.</p>
+        </div>
+      </section>
+
+      <section class="event-registration-action">
+        <h2>Registration Information</h2>
+        <p>Seats are limited. Ensure your spot by registering early.</p>
+        <a id="registerLink" href="register.html?id=1" class="button">Register for this Event</a>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 College Club. All rights reserved.</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/event-details.js"></script>
+</body>
+</html>
