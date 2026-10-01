@@ -48,14 +48,19 @@ async function checkAdminSession() {
     const user = sessionData.session.user;
     if (!user) return { authenticated: false, isAdmin: false };
 
-    // Query admin_users table for this user_id
-    const { data: adminRows, error: adminErr } = await client
+    // Query admin_users table for this user_id with explicit authorization token
+    let adminQuery = client
       .from("admin_users")
       .select("user_id")
-      .eq("user_id", user.id)
-      .limit(1);
+      .eq("user_id", user.id);
 
-    if (adminErr || !adminRows || adminRows.length === 0) {
+    if (sessionData.session?.access_token) {
+      adminQuery = adminQuery.setHeader("Authorization", `Bearer ${sessionData.session.access_token}`);
+    }
+
+    const { data, error } = await adminQuery.limit(1);
+
+    if (error || !data || data.length === 0) {
       return { authenticated: true, isAdmin: false, user };
     }
 

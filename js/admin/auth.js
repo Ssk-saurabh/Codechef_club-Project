@@ -74,14 +74,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Check if user is in public.admin_users
-      const { data: adminRows, error: adminErr } = await client
+      const user = authData.user;
+
+      // Check if user is in public.admin_users with explicit authorization token
+      let adminQuery = client
         .from("admin_users")
         .select("user_id")
-        .eq("user_id", authData.user.id)
-        .limit(1);
+        .eq("user_id", user.id);
 
-      if (adminErr || !adminRows || adminRows.length === 0) {
+      if (authData.session?.access_token) {
+        adminQuery = adminQuery.setHeader("Authorization", `Bearer ${authData.session.access_token}`);
+      }
+
+      const { data, error } = await adminQuery.limit(1);
+
+      if (error || !data || data.length === 0) {
         // Authenticated user is NOT an authorized admin
         await client.auth.signOut();
         showMessage("Unauthorized: Your account does not have administrator privileges.", true);
