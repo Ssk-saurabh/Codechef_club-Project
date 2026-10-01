@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - College Club</title>
+  <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="logo">Admin Console</span>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="registrations.html">Registrations</a></li>
+        <li><button type="button" id="logoutBtn">Log Out</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-header">
+      <h1>Dashboard Overview</h1>
+      <p>Summary of club events and student registrations.</p>
+    </section>
+
+    <!-- Key Metrics Cards -->
+    <section class="metrics-grid">
+      <article class="metric-card">
+        <h2>Total Events</h2>
+        <p class="metric-value" id="totalEventsCount">--</p>
+      </article>
+
+      <article class="metric-card">
+        <h2>Upcoming Events</h2>
+        <p class="metric-value" id="upcomingEventsCount">--</p>
+      </article>
+
+      <article class="metric-card">
+        <h2>Total Registrations</h2>
+        <p class="metric-value" id="totalRegistrationsCount">--</p>
+      </article>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <h2>Quick Actions</h2>
+      <a href="events.html" class="button">Manage Events</a>
+      <a href="registrations.html" class="button">View Registrations</a>
+      <a href="../index.html" class="button secondary">View Public Site</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 College Club Administration.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/admin/dashboard.js"></script>
+</body>
+</html>

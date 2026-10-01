@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Registrations - Admin</title>
+  <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="logo">Admin Console</span>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="registrations.html">Registrations</a></li>
+        <li><button type="button" id="logoutBtn">Log Out</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="admin-page-header">
+      <h1>Event Registrations</h1>
+      <p>View, search, and filter student registrations.</p>
+    </section>
+
+    <!-- Filters and Search -->
+    <section class="admin-filters">
+      <form id="registrationFilterForm" onsubmit="return false;">
+        <label for="regSearchInput">Search Student:</label>
+        <input type="text" id="regSearchInput" placeholder="Search by student name or email...">
+
+        <label for="regEventFilter">Filter by Event:</label>
+        <select id="regEventFilter">
+          <option value="">All Events</option>
+          <option value="1">Annual Hackathon 2026</option>
+          <option value="2">Web Development Bootcamp</option>
+        </select>
+      </form>
+    </section>
+
+    <!-- Registrations Table -->
+    <section class="admin-table-section">
+      <table id="registrationsTable">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>College</th>
+            <th>Year</th>
+            <th>Phone</th>
+            <th>Event</th>
+            <th>Registered Date</th>
+          </tr>
+        </thead>
+        <tbody id="registrationsTableBody">
+          <tr>
+            <td>Jane Doe</td>
+            <td>jane@example.edu</td>
+            <td>State Engineering College</td>
+            <td>3rd Year</td>
+            <td>9876543210</td>
+            <td>Annual Hackathon 2026</td>
+            <td>2026-10-01</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 College Club Administration.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/admin/registrations.js"></script>
+</body>
+</html>
